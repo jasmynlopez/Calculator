@@ -143,7 +143,7 @@ button.flash-operator-light {
     background-repeat: no-repeat; 
     background-size: 85%;
     background-position: center;
-    background-image: url('../sun.png');
+    background-image: url('sun.png');
   }
   
   /* when toggled, slider changes background color */
@@ -159,7 +159,7 @@ button.flash-operator-light {
     background-repeat: no-repeat; 
     background-position: center;
     background-size: 100%;
-    background-image: url('../moon.png');
+    background-image: url('moon.png');
     background-color: #fff;
   }
 
