@@ -193,13 +193,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 button.classList.add('flash-light');
                 setTimeout(() => button.classList.remove('flash-light'), 300); // 0.3s duration
             } else { // for operators, start with a flash, then change color to represent selction
-                button.classList.add('flash-orange');
-                setTimeout(() => button.classList.remove('flash-orange'), 300); // 0.3s duration
-                button.classList.add('flash-operator-light');
+                if (document.body.classList.contains('light-mode')) {
+                    button.classList.add('flash-operator-light');
+                } else {
+                    button.classList.add('flash-operator-dark');
+                }
+
+                
                 // remove highlight from any other operators that are potentially on
                 document.querySelectorAll('button').forEach(button => {
                     if (['+', '-', 'x', '÷'].includes(button.innerText) && button.innerText !== value) {
                         setTimeout(() => button.classList.remove('flash-operator-light'), 200);
+                        setTimeout(() => button.classList.remove('flash-operator-dark'), 200);
                     }
                 })
             }
